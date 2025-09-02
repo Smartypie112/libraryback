@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Brand</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9; /* light background */
+    }
+    img {
+      max-width: 250px;  /* adjust size of logo */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Replace "logo.png" with your actual logo file path -->
+  <img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG-20250901-WA0007-removebg-preview.png" alt="My Brand Logo">
+  <script>
+  setTimeout(()=>{
+    let Savedusername = localStorage.getItem("username"); 
+  if(Savedusername){
+     // Redirect to dashboard or home
+      window.location.href = "nav.html";
+  }else{
+    window.location.href = "mainlogin.html";
+  }
+  },1500);
+  </script>
+</body>
+</html>

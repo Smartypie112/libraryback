@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Profile Card UI</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #e9ecef;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .phone-view {
+      width: 100%;
+      max-width: 380px;
+      background: #fff;
+      border-radius:0  0 20px 20px ;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Profile Header */
+    .profile-header {
+      background: linear-gradient(135deg, #005bea, #00c6fb);
+      padding: 40px 20px 30px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      width: 90vw;
+    }
+
+    .profile-header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .profile-header h2 {
+      margin: 5px 0 2px;
+      font-size: 20px;
+    }
+
+    .profile-header p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    /* Menu */
+    .menu {
+      padding: 10px 0;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 14px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+      transition: background 0.3s;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .menu-item:hover {
+      background: #f8f9fa;
+    }
+
+    .menu-item svg {
+      margin-right: 12px;
+      width: 20px;
+      height: 20px;
+      fill: #444;
+    }
+
+    /* Contact Info */
+    .contact-card {
+      padding: 15px;
+    }
+
+    .contact-card h1 {
+      font-size: 18px;
+      margin: 0 0 15px;
+      text-align: center;
+      color: #333;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-left img {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+
+    .badge {
+      background: #f1f3f5;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #444;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="phone-view">
+    <!-- Profile Header -->
+<div class="profile-header">
+  <img id="profile-pic" src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_124659.jpg" alt="profile">
+  <h2><span id="name"></span>
+    <span class="premium"style="font-size:12px; background:#f9d6db; color:#d23a52; padding:2px 6px; border-radius:6px;margin-left:5px;">PRO</span>
+  </h2>
+  <p class="premium">Premium Member</p>
+</div>
+
+    <!-- Menu -->
+    <div class="menu">
+<div class="menu-item" id="account-settings">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94a7.07 7.07 0 000-1.88l2.03-1.58a.5.5 0 00.12-.65l-1.92-3.32a.5.5 0 00-.61-.22l-2.39.96a7.13 7.13 0 00-1.63-.95l-.36-2.54A.5.5 0 0014.9 2h-3.8a.5.5 0 00-.5.42l-.36 2.54c-.6.23-1.14.55-1.63.95l-2.39-.96a.5.5 0 00-.61.22L2.7 8.83a.5.5 0 00.12.65l2.03 1.58a7.07 7.07 0 000 1.88l-2.03 1.58a.5.5 0 00-.12.65l1.92 3.32c.14.23.41.32.61.22l2.39-.96c.49.4 1.03.72 1.63.95l.36 2.54c.04.25.25.42.5.42h3.8c.25 0 .46-.17.5-.42l.36-2.54c.6-.23 1.14-.55 1.63-.95l2.39.96c.2.1.47.01.61-.22l1.92-3.32a.5.5 0 00-.12-.65l-2.03-1.58zM12 15.5A3.5 3.5 0 1115.5 12 3.5 3.5 0 0112 15.5z"/></svg>
+        Account Settings
+</div>
+      <div class="menu-item" id="logout">
+        <svg viewBox="0 0 24 24"><path d="M16 13v-2H7V8l-5 4 5 4v-3h9zm3-10H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg>
+        Logout
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-card">
+      <h1>Contact with Owner</h1>
+      <div class="contact-item">
+        <div class="contact-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
+          <span>Contact Number</span>
+        </div>
+        <span class="badge">+91 97644 92349</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-left">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          <span>WhatsApp</span>
+        </div>
+        <span class="badge">+91 97644 92349</span>
+      </div>
+  </div>
+  <script>
+    function deleteUsername() {
+      localStorage.removeItem("premium");
+  localStorage.removeItem("username");
+}
+  document.getElementById('account-settings').addEventListener('click', function() {
+    window.location.href = "settings.html";
+  });
+  document.getElementById('logout').addEventListener('click', function() {
+    deleteUsername();
+    // Redirect to login page, replacing current history
+    window.location.replace('mainlogin.html');
+});
+</script>
+    <script>
+  function deleteUsername() {
+    localStorage.removeItem("premium");
+    localStorage.removeItem("username");
+  }
+
+  // Load saved profile picture
+  const savedPic = localStorage.getItem("profilePic");
+  if (savedPic) {
+    document.getElementById("profile-pic").src = savedPic;
+  }
+let Savedusername = localStorage.getItem("username"); 
+  if(Savedusername){
+    document.getElementById("name").innerText = Savedusername ;
+  }
+    let Premium = localStorage.getItem("premium"); 
+
+if (Premium === "true") {
+  // Show premium-only elements
+  document.querySelectorAll(".premium").forEach(el => {
+    el.style.display = "inline-block"; // or "block" depending on element
+  });
+} else {
+  // Hide premium-only elements
+  document.querySelectorAll(".premium").forEach(el => {
+    el.style.display = "none";
+  });
+}
+  document.getElementById('account-settings').addEventListener('click', function() {
+    window.location.href = "settings.html";
+  });
+
+  document.getElementById('logout').addEventListener('click', function() {
+    deleteUsername();
+    window.location.replace('mainlogin.html');
+  });
+</script>
+</body>
+</html>

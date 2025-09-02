@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: #f6f7fb;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Top App Bar */
+    .app-bar {
+      background: #2d4b73;
+      color: white;
+      padding: 16px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Image Carousel (Sliding) */
+    .carousel {
+      position: relative;
+      margin: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel img {
+      min-width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Arrows */
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .carousel button.prev {
+      left: 10px;
+    }
+
+    .carousel button.next {
+      right: 10px;
+    }
+
+    /* Scrollable content */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    /* Hero Card */
+    .hero {
+      background: #ff8c42;
+      color: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: white;
+      color: #ff8c42;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .action-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Info Section */
+    .info-card {
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 15px;
+    }
+
+    .info-card h4 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #2d4b73;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="app-bar">📚 Waari Abhyashika Library</div>
+
+  <!-- Image Carousel -->
+  <div class="carousel">
+    <div class="carousel-track">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120045.jpg" alt="Library 2">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120103.jpg" alt="Library 3">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120117.jpg" alt="Library 4">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120140.jpg" alt="Library 5">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120157.jpg" alt="Library 6">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120217.jpg" alt="Library 7">
+<img src="https://raw.githubusercontent.com/Smartypie112/Library/refs/heads/main/IMG_20250829_120240.jpg" alt="Library 8"> </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <!-- Scrollable Content -->
+  <div class="content">
+    <!-- Hero -->
+    <div class="hero">
+      <h2>Welcome Back!</h2>
+      <p>Book your study seat now</p>
+      <button id="map" class="btn">Available Seat</button>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <div  onclick="window.parent.doSomethingNotification()" class="action-card">🔔 Notifications</div>
+      <div onclick="window.parent.doSomethingContact()" class="action-card">📞 Contact</div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-card">
+      <h4>Opening Hours</h4>
+      <p>Mon - Sun: 24/7<br>All Time</p>
+    </div>
+
+<div class="info-card">
+  <h4>Facilities (Open 24/7)</h4>
+  <div class="facility-scroll">
+    <div class="facility">❄️ <span>AC</span></div>
+    <div class="facility">💧 <span>RO Water</span></div>
+    <div class="facility">🔋 <span>Charging Socket</span></div>
+    <div class="facility">🗣️ <span>Discussion Hall</span></div>
+    <div class="facility">🚻 <span>Separate Washroom</span></div>
+    <div class="facility">📶 <span>Free WiFi</span></div>
+  </div>
+</div>
+
+<style>
+  .facility-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .facility {
+    flex: 0 0 auto;
+    min-width: 120px;
+    background: #f6f7fb;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .facility:hover {
+    background: #ffefdf;
+    transform: scale(1.05);
+  }
+
+  .facility span {
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* Hide scrollbar (mobile-style) */
+  .facility-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .facility-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<div class="info-card" style="margin-bottom:100px;">
+  <h4>Location</h4>
+  <p>123 Knowledge Street, Downtown City</p>
+
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?q=Waari%20Abhyasika%20(Reading%2F%20Study%20Room%2F%20Library)%20%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%85%E0%A4%AD%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B8%E0%A4%BF%E0%A4%95%E0%A4%BE%20(%E0%A4%B0%E0%A5%80%E0%A4%A1%E0%A4%BF%E0%A4%82%E0%A4%97%2F%20%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%A1%E0%A5%80%20%E0%A4%B0%E0%A5%82%E0%A4%AE%2F%20%E0%A4%B2%E0%A4%BE%E0%A4%87%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%B0%E0%A5%80)&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mapouter {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* container limit */
+    height: 250px;
+  }
+  .gmap_canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .gmap_canvas iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px; /* optional rounded corners */
+  }
+</style>
+</div>
+</div>
+
+  <script>
+    const track = document.querySelector(".carousel-track");
+    const images = document.querySelectorAll(".carousel img");
+    const prevBtn = document.querySelector(".carousel .prev");
+    const nextBtn = document.querySelector(".carousel .next");
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    });
+
+    // Auto-slide every 5s
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    }, 5000);
+
+    // Existing buttons
+    document.getElementById("map").addEventListener("click", function() {
+      window.location.href = "map.html";
+    });
+  </script>
+
+</body>
+</html>
